@@ -116,6 +116,7 @@ type Service struct {
 // Create a new initial process and container with the underlying OCI runtime
 func (s *Service) Create(ctx context.Context, r *shimapi.CreateTaskRequest) (_ *shimapi.CreateTaskResponse, err error) {
 	var mounts []process.Mount
+	fmt.Println(r)
 	for _, m := range r.Rootfs {
 		mounts = append(mounts, process.Mount{
 			Type:    m.Type,
